@@ -1,0 +1,78 @@
+footer {
+    padding: 70px 0;
+    background: #303a35;
+    h3 {
+        font-size: 16px;
+        color: #fff;
+        font-family: "Century Gothic Bold";
+        padding-bottom: 15px;
+        &.contactTitle {
+            font-size: 40px;
+        }
+    }
+    .contactDetail {
+        font-size: 14px;
+        color: #f9f9f9;
+        font-family: "Century Gothic";
+    }
+    .list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+            padding-bottom: 5px;
+            a {
+                font-size: 14px;
+                color: #f9f9f9;
+                font-family: "Century Gothic";
+            }
+        }
+    }
+    .toy-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+            padding-bottom: 10px;
+            a {
+                font-size: 16px;
+                color: #f9f9f9;
+                font-family: "Century Gothic Bold";
+            }
+        }
+    }
+    .socialLinks {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: inline-flex;
+        width: 80%;
+        li {
+            display: inline-block;
+            margin-right: 40px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    .terms {
+        align-items: flex-end;
+        display: inline-flex;
+        p {
+            font-size: 14px;
+            color: #fff;
+        }
+    }
+}
+.contactBtn {
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 90px;
+    padding: 7px 50px 7px 16px;
+    display: inline-block;
+    font-size: 16px;
+    color: #fff !important;
+    background: url(../img/btn-arrow.png) no-repeat 89% center;
+    margin: 40px 0;
+    text-decoration: none !important;
+}

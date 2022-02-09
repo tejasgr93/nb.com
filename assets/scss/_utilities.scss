@@ -1,0 +1,143 @@
+$fontSize: (
+    fontSize8: 8px,
+    fontSize10: 10px,
+    fontSize12: 12px,
+    fontSize13: 13px,
+    fontSize14: 14px,
+    fontSize15: 15px,
+    fontSize16: 16px,
+    fontSize18: 18px,
+    fontSize20: 20px,
+    fontSize22: 22px,
+    fontSize24: 24px,
+    fontSize30: 30px,
+    fontSize40: 40px,
+    fontSize50: 50px,
+    fontSize60: 60px,
+    fontSize70: 70px,
+   
+);
+
+@function fontSize($font-size){
+    @return map-get($fontSize,$font-size);
+}
+
+$primaryColors: (
+    blueColor: #164297,
+    whiteColor: #ffffff,
+    blackColor:#141414,
+    grayColor:#504F63,
+    darkGrayColor:#36384A,
+   
+);
+
+$secondaryColor : #90e4bb;
+$secondaryHoverColor : #77d1a5;
+$btn-dimension:80px;
+
+@function primaryColor($color-name){
+    @return map-get($primaryColors,$color-name);
+}
+@mixin cuMax {
+    @media(max-width:1240px){
+        @content;
+    }
+}
+@mixin lgFull {
+    @media(min-width:1440px) and (max-width:1900px){
+        @content;
+    }
+}
+
+@mixin lgFullMid {
+    @media(min-width:1300px) and (max-width:1400px){
+        @content;
+    }
+}
+@mixin lgMin {
+    @media(min-width:1200px){
+        @content;
+    }
+}
+@mixin lgMax {
+    @media(max-width:1199px){
+        @content;
+    }
+}
+@mixin lgMinMax {
+    @media(min-width:993px) and (max-width:1199px){
+        @content;
+    }
+}
+@mixin mdMin {
+    @media(min-width: 768px) {
+        @content;
+    }
+}
+@mixin mdMinMax {
+    @media(min-width:768px) and (max-width:1024px){
+        @content;
+    }
+}
+@mixin mdMaxPor {
+    @media(max-width: 1024px) {
+        @content;
+    }
+}
+@mixin mdMax {
+    @media(max-width:992px){
+        @content;
+    }
+}
+@mixin mdMaxMin {
+    @media(min-width:992px){
+        @content;
+    }
+}
+
+@mixin smMax {
+    @media(max-width:767px){
+        @content;
+    }
+}
+@mixin smMin {
+    @media(min-width:768px){
+        @content;
+    }
+}
+@mixin smMinMax {
+    @media(min-width:576px) and (max-width:767px){
+        @content;
+    }
+}
+@mixin col{
+    @media(max-width:575px){
+        @content;
+    }
+}
+@mixin mLandscape{
+    @media(min-width:481px) and (max-width:767px){
+        @content;
+    }
+}
+@mixin hover-supported {
+    @media not all and (pointer: coarse) {
+        &:hover {
+        @content;
+        }
+    }
+}
+@mixin hover-supported-after {
+    @media not all and (pointer: coarse) {
+        &:hover::after {
+        @content;
+        }
+    }
+}
+@mixin hover-supported-before {
+    @media not all and (pointer: coarse) {
+        &:hover::before {
+        @content;
+        }
+    }
+}

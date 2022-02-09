@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /trackback/
+Disallow: /xmlrpc.php
+Disallow: /feed/
+Allow: /wp-admin/admin-ajax.php
+
+Disallow: /blog/tag/*
+Disallow: /blog/cgi-bin
+Disallow: /blog/page
+Disallow: /blog/tags
+Disallow: /blog/tag

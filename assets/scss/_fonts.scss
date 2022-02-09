@@ -1,0 +1,145 @@
+@font-face {
+    font-family: "latoblack";
+    src: url("../css/fonts/lato-black-webfont.woff2") format("woff2"),
+        url("../css/fonts/lato-black-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "latobold";
+    src: url("../css/fonts/lato-bold-webfont.woff2") format("woff2"),
+        url("../css/fonts/lato-bold-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "latoitalic";
+    src: url("../css/fonts/lato-italic-webfont.woff2") format("woff2"),
+        url("../css/fonts/lato-italic-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "latolight";
+    src: url("../css/fonts/lato-light-webfont.woff2") format("woff2"),
+        url("../css/fonts/lato-light-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "latoregular";
+    src: url("../css/fonts/lato-regular-webfont.woff2") format("woff2"),
+        url("../css/fonts/lato-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "latosemibold";
+    src: url("../css/fonts/lato-semibold-webfont.woff2") format("woff2"),
+        url("../css/fonts/lato-semibold-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "latothin";
+    src: url("../css/fonts/lato-thin-webfont.woff2") format("woff2"),
+        url("../css/fonts/lato-thin-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "gothamlight";
+    src: url("../css/fonts/gothamlight-webfont.woff2") format("woff2"),
+        url("../css/fonts/gothamlight-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "gothammedium";
+    src: url("../css/fonts/gothammedium-webfont.woff2") format("woff2"),
+        url("../css/fonts/gothammedium-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "gothamthin";
+    src: url("../css/fonts/gotham-thin-webfont.woff2") format("woff2"),
+        url("../css/fonts/gotham-thin-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Century Gothic Bold";
+    src: url("../css/fonts/CenturyGothic-Bold.woff2") format("woff2"),
+        url("../css/fonts/CenturyGothic-Bold.woff") format("woff"),
+        url("../css/fonts/CenturyGothic-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Century Gothic";
+    src: url("../css/fonts/CenturyGothic.woff2") format("woff2"), url("../css/fonts/CenturyGothic.woff") format("woff"),
+        url("../css/fonts/CenturyGothic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "FontAwesome";
+    src: url("../css/fonts/fontawesome-webfont.eot?v=4.7.0");
+    src: url("../css/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"),
+        url("../css/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
+        url("../css/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"),
+        url("../css/fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
+        url("../css/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Gotham Bold";
+    src: url("../css/fonts/Gotham-Bold.eot");
+    src: url("../css/fonts/Gotham-Bold.eot?#iefix") format("embedded-opentype"),
+        url("../css/fonts/Gotham-Bold.woff2") format("woff2"), url("../css/fonts/Gotham-Bold.woff") format("woff"),
+        url("../css/fonts/Gotham-Bold.svg#Gotham-Bold") format("svg");
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-00FE;
+}
+@font-face {
+    font-family: "centurygothicblack";
+    src: url("../css/fonts/centurygothicblack-webfont.woff2") format("woff2"),
+        url("../css/fonts/centurygothicblack-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "CenturyGothicBolder";
+    src: url("../css/fonts/centurygothic-extra-bold-webfont.woff2") format("woff2"),
+        url("../css/fonts/centurygothic-extra-bold-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+$fontFamily: (
+    latoRegular: "latoregular",
+    latoLight: "latolight",
+    latoBlack: "latoblack",
+    latoBold: "latobold",
+    latoItalic: "latoitalic",
+    latoSemibold: "latosemibold",
+    latoThin: "latothin",
+    CenturyGothic: "Century Gothic",
+    CenturyGothicBold: "Century Gothic Bold",
+    CenturyGothicBlack: "centurygothicblack",
+    CenturyGothicBolder: "CenturyGothicBolder",
+);
+
+@function fontFamily($font-family) {
+    @return map-get($fontFamily, $font-family);
+}

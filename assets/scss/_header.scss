@@ -1,0 +1,240 @@
+/* Header css starts hare*/
+.header {
+    .navbar {
+        transition: top 0.2s ease-in-out;
+        z-index: 4;
+        &.nav-up {
+            top: -100px;
+        }
+        padding: 15px 6.5rem;
+        @include smMax {
+            padding: 0.5rem 1rem;
+        }
+    }
+    .navigation {
+        width: 100%;
+    }
+    .navList {
+        flex: 5;
+    }
+    .navbar-light {
+        transition: 0.3s;
+        .nav {
+            li {
+                border-radius: 6px;
+                &:hover {
+                    background: #745cf9;
+                }
+                &.show {
+                    background: #745cf9;
+                }
+                &.active {
+                    background: #745cf9;
+                }
+                &:last-child {
+                    a {
+                        &.nav-link {
+                            margin-right: 0;
+                        }
+                    }
+                }
+                a {
+                    position: relative;
+                    &.nav-link {
+                        text-transform: capitalize;
+                        font-size: fontSize(fontSize16);
+                        font-family: fontFamily(CenturyGothic);
+                        color: primaryColor(whiteColor);
+
+                        margin-left: 0;
+                        padding: 8px 25px 8px 12px;
+                        @include smMax {
+                            margin-right: 1rem;
+                            margin-left: 1rem;
+                        }
+                    }
+                    &.active {
+                    }
+                    &:hover {
+                    }
+                }
+                &.last {
+                    .nav-link {
+                        margin-right: 0;
+                    }
+                }
+                .dropdown-toggle::after {
+                    display: none;
+                }
+            }
+        }
+        .contactUs {
+            border: 2px solid #ffffff;
+            box-sizing: border-box;
+            border-radius: 30px;
+            padding: 5px 20px;
+            height: 38px;
+            color: #fff;
+            font-size: 16px;
+            margin-top: 0;
+            font-family: "Century Gothic Bold";
+            white-space: nowrap;
+            text-decoration: none;
+            transition: 0.3s;
+            &:hover {
+                background: #fff;
+                color: #745cf9;
+            }
+        }
+    }
+
+    .logo {
+        @include smMax {
+            max-width: 150px;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+.nav-item.--hidden {
+    display: none;
+}
+.-more.--hidden {
+    display: none;
+}
+
+.submenu {
+    position: absolute;
+    right: 0;
+    top: 45px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 200px;
+    background: #745cf9;
+    padding: 10px 10px;
+    border-radius: 5px;
+
+    li {
+        a {
+            &.nav-link {
+                margin-left: 0 !important;
+            }
+        }
+    }
+}
+.hasMenu {
+    padding-right: 0;
+    .dropdown-toggle {
+        position: relative;
+        &::before {
+            content: "";
+            width: 12px;
+            height: 8px;
+            background: url(../img/down-arrow.png) no-repeat right center;
+            position: absolute;
+            right: 8px;
+            top: 17px;
+        }
+    }
+}
+
+.is-scrolled {
+    .hasMenu {
+        .dropdown-toggle {
+            position: relative;
+            &::before {
+                content: "";
+                width: 12px;
+                height: 8px;
+                background: url(../img/down-arrow-black.png) no-repeat right center;
+                position: absolute;
+                right: 8px;
+                top: 17px;
+            }
+        }
+    }
+}
+
+.dropdown-menu {
+    background: #745cf9;
+    .dropdown-item {
+        white-space: normal;
+        background: #745cf9;
+        color: #fff;
+    }
+}
+
+.whiteSticky {
+    .hasMenu {
+        &:after {
+            background: url(../img/down-arrow-black.png) no-repeat right center;
+        }
+    }
+}
+
+.--show-secondary {
+    #autoNav {
+        .-more {
+            .submenu {
+                display: block;
+            }
+        }
+    }
+}
+
+#autoNav {
+    justify-content: space-between !important;
+    width: 100%;
+    padding-right: 0;
+    .-more {
+        position: relative;
+        .submenu {
+            display: none;
+        }
+    }
+}
+.partinerLogo {
+    display: inline-block;
+    width: 205px;
+    margin-left: 30px;
+}
+.black {
+    display: none;
+}
+.whiteSticky {
+    background: #fff;
+    // filter: drop-shadow(0px 4px 14px rgba(0, 0, 0, 0.25));
+    &.navbar-light {
+        .nav {
+            li {
+                a {
+                    &.nav-link {
+                        color: #58595b;
+                    }
+                    &:after {
+                        background: #745cf9;
+                    }
+                }
+            }
+        }
+        .contactUs {
+            border-color: #745cf9;
+            color: #745cf9;
+            transition: 0.3s;
+            &:hover {
+                background: #745cf9;
+                color: #fff;
+            }
+        }
+
+        .black {
+            display: block;
+        }
+        .white {
+            display: none;
+        }
+    }
+}

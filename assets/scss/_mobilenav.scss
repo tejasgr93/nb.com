@@ -1,0 +1,67 @@
+.menu-btn {
+  width: 35px;
+  height: 20px;
+  position: absolute;
+  right: 1rem;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  // transition: all 0.5s ease-in-out;
+  @include mdMaxMin {
+    display: none;
+    right: 2rem;
+  }
+}
+.menu-btn__burger,
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  width: 35px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px var(--box-shadow-color);
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+}
+.menu-btn__burger::before {
+  transform: translateY(-10px);
+}
+.menu-btn__burger::after {
+  transform: translateY(10px);
+}
+
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-50px);
+  background-color: transparent;
+  box-shadow: none;
+}
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+/* Header css End hare*/
+
+// .navbar{
+//   &.nav-up{
+//       .menu-btn{
+//         @include smMax{
+//             top: 80px;
+//         }
+//       }
+//       .navContent{
+//         @include smMax{
+//           top: 118px;
+//       }
+
+//       }
+//   }
+// }

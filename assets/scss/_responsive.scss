@@ -1,0 +1,232 @@
+@media screen and (min-width: 1024px) {
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        padding: 15px;
+    }
+    .header .navbar-light .nav li a {
+        position: relative;
+        padding: 10px 0;
+    }
+    .whiteSticky.navbar-light .nav li.show a.nav-link {
+        color: #fff;
+    }
+    .whiteSticky.navbar-light .nav li:hover a.nav-link {
+        color: #fff;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    .heroSection.innerBanner .slider-wrapper .slider {
+        height: 100vh;
+    }
+    .heroSection.innerBanner .slider-wrapper {
+        height: 100vh;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .header .navbar {
+        padding: 15px 30px;
+    }
+    .slider-wrapper .slide .slide-content {
+        padding: 5rem 0px;
+    }
+
+    footer .socialLinks li img {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar-light .navbar-brand {
+        max-width: 120px;
+        position: relative;
+        z-index: 99;
+    }
+    .prevent-scroll .navbar-light:after {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        top: 0;
+        background: #745cf9;
+    }
+    .menu-btn {
+        top: 21px;
+        z-index: 99;
+    }
+    .contact-row {
+        & > .show {
+            padding-top: 10px !important;
+            padding-bottom: 100px !important;
+            overflow-y: auto;
+        }
+    }
+    #autoNav {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    .header .navbar-light .contactUs {
+        margin-bottom: 30px;
+    }
+    .megamenu-dropdown,
+    .dropdown-menu {
+        position: relative !important;
+        border: none;
+    }
+    .contact-row > .show {
+        padding-top: 10px !important;
+        padding-bottom: 30px !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #745cf9;
+    }
+
+    .header .navbar-light .nav li a.nav-link {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .header .navList {
+        flex: auto;
+    }
+    .header .navbar.nav-up {
+        top: -110px;
+    }
+
+    .header .navigation {
+        flex-wrap: wrap;
+        height: 95%;
+        align-items: flex-start !important;
+    }
+
+    .whiteSticky .menu-btn__burger,
+    .whiteSticky .menu-btn__burger::before,
+    .whiteSticky .menu-btn__burger::after {
+        background-color: #fff !important;
+    }
+    .whiteSticky .menu-btn.open .menu-btn__burger {
+        background-color: transparent !important;
+    }
+    .whiteSticky {
+        background: #745cf9;
+        .navContent {
+            background: #745cf9;
+        }
+    }
+    .collapsing {
+        transition: auto !important;
+    }
+    .prevent-scroll {
+        overflow: hidden;
+    }
+    .whiteSticky.navbar-light .nav li a.nav-link {
+        color: #fff;
+    }
+    .slider-wrapper .slide .slide-content {
+        padding: 0;
+    }
+    .slider-wrapper .slide .slide-content h2 {
+        font-size: 20px;
+    }
+    .slider-wrapper .slide .slide-txt p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .whiteSticky.navbar-light .contactUs {
+        color: #fff;
+        border-color: #fff;
+    }
+    .slideCount {
+        right: 30px;
+        bottom: 60px;
+        z-index: 1;
+    }
+    .services {
+        padding: 40px 0 10px 0;
+    }
+    .work-section {
+        padding: 40px 0;
+        h3 {
+            padding-bottom: 30px;
+        }
+    }
+    .services-row,
+    .featured-customers,
+    .caseStudies,
+    .featured-reviews,
+    .blog {
+        padding: 40px 0;
+    }
+    .caseStudies .col-md-6 {
+        margin-bottom: 30px;
+    }
+    .services-row h3,
+    .featured-reviews h3,
+    .blog h3 {
+        margin-bottom: 30px;
+    }
+    .services-row a {
+        font-size: 25px;
+    }
+    .services .col-md-4 {
+        margin-bottom: 30px;
+    }
+
+    .slider.inner-page .slide-content h2 {
+        font-size: 40px;
+        line-height: 1.5;
+    }
+    .solr-services h3 {
+        font-size: 40px;
+        padding: 40px 0;
+    }
+    .solr-services .container > .row {
+        flex-flow: column-reverse;
+    }
+    .formSec {
+        padding: 40px 10px;
+    }
+    .formSec::before {
+        left: -50%;
+    }
+    .formSec h3 {
+        padding-top: 0;
+    }
+    .we-do-row {
+        text-align: center;
+    }
+    .we-do-row:nth-child(2n) {
+        flex-flow: column-reverse;
+    }
+    .what-we-do.ab-quality .we-do-row:nth-child(2n) {
+        flex-flow: column !important;
+    }
+    .we-do-row img {
+        margin-bottom: 30px;
+    }
+    .offering,
+    .what-we-do,
+    .es-solution {
+        padding: 40px 0;
+    }
+    .logoSection h3 {
+        padding-bottom: 30px;
+    }
+    .work-section.adobe-content .gray-bg {
+        padding: 40px 0;
+    }
+    .cloud-section,
+    .logoSection {
+        padding: 40px 0 20px;
+    }
+    .horizontal-card .card-title {
+        font-size: 30px;
+        line-height: 36px;
+        padding: 20px 0;
+    }
+    footer {
+        padding: 50px 0;
+    }
+}

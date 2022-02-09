@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+	<base href="https://www.nextbrick.com/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apache Solr Monitoring with Nextbrick - Nextbrick, Inc</title>
+    <!-- This site is optimized with the Yoast SEO plugin v13.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="An open-source search server, Apache Solr is a Lucene full-text search engine and it has the latest features like indexing, exploring multiple websites, and delivering suggestions for relevant content according to the search query’s taxonomy. Furthermore, it can instantly search out documents and email attachments.">
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://www.nextbrick.com/blog/apache-solr-monitoring-with-nextbrick" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Apache Solr Monitoring with Nextbrick - Nextbrick, Inc" />
+    <meta property="og:description"
+        content="An open-source search server, Apache Solr is a Lucene full-text search engine and it has the latest features like indexing, exploring multiple websites, and delivering suggestions for relevant content according to the search query’s taxonomy. Furthermore, it can instantly search out documents and email attachments." />
+    <meta property="og:url" content="https://www.nextbrick.com/blog/apache-solr-monitoring-with-nextbrick" />
+    <meta property="og:site_name" content="Nextbrick, Inc" />
+    <meta property="og:image" content="./assets/img/cvs-pharmacy-logo.png" />
+    <meta property="og:image:secure_url"
+        content="./assets/img/cvs-pharmacy-logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description"
+        content="An open-source search server, Apache Solr is a Lucene full-text search engine and it has the latest features like indexing, exploring multiple websites, and delivering suggestions for relevant content according to the search query’s taxonomy. Furthermore, it can instantly search out documents and email attachments." />
+    <meta name="twitter:title" content="Apache Solr Monitoring with Nextbrick - Nextbrick, Inc" />
+    <meta name="twitter:image" content="./assets/img/cvs-pharmacy-logo.png" />
+   
+    <!-- / Yoast SEO plugin. -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+    <link rel="stylesheet" href="./assets/css/aos.css">
+    <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134752872-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-134752872-1');
+        gtag('config', 'AW-762133543');
+    </script>
+	<link rel="icon" type="image/png" href="./favicon.png"/>
+</head>
+
+<body>
+    <!-- Header Starts -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top pt-3 pb-3 navbar-light">
+            <div class="container-fluid">
+                <div class="col-md-3 p-0">
+                    <a class="navbar-brand py-0" href="./">
+                        <img class="white" src="./assets/img/logo.svg" alt="Nextbrick logo">
+                        <img class="black" src="./assets/img/logo.svg" alt="Nextbrick    logo">
+                    </a>
+                </div>
+                <div class="menu-btn" data-toggle="collapse" data-target="#navbarCollapse">
+                    <div class="menu-btn__burger"></div>
+                </div>
+                <div class="col-md-9 pr-0 justify-content-end contact-row">
+                    <div class="col-md-12 p-0 collapse navbar-collapse navContent tabs" id="navbarCollapse">
+                        <div class="d-flex navigation align-items-center justify-content-end">
+                            <div class="col navList navbar-collapse" id="navbar">
+                                <ul id="autoNav" class="navbar-nav ml-auto nav justify-content-end -primary ">
+                                    <li class="nav-item"><a class="nav-link" href="./">Home</a></li>
+                                    <li class="nav-item hasMenu dropdown megamenu-li"><a
+                                            class="nav-link dropdown-toggle" id="aboutMenu" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false" href="#">About</a>
+
+                                        <div class="dropdown-menu megamenu smallNav" aria-labelledby="aboutMenu">
+                                            <div class="row">
+                                                <div class="col-sm-12 col-lg-12">
+                                                    <a class="dropdown-item" href="value-proposition">Value Proposition</a>
+                                                    <a class="dropdown-item" href="leadership">Leadership</a>
+                                                    <a class="dropdown-item" href="quality">Quality</a>
+                                                    <a class="dropdown-item" href="press">Press</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item hasMenu dropdown megamenu-li megamenu-dropdown"><a
+                                            class="nav-link dropdown-toggle" id="servicesMenu" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false" href="#">Services</a>
+                                        <div class="dropdown-menu megamenu col-lg-12" aria-labelledby="servicesMenu">
+                                            <div class="row">
+                                                <div class="col-sm-2 col-lg-2">
+                                                    <a class="dropdown-item" href="search">
+                                                        <h4>Search</h4>
+                                                    </a>
+                                                    <a class="dropdown-item" href="solr">Solr</a>
+                                                    <a class="dropdown-item" href="elastic-search">Elastic Search</a>
+                                                    <a class="dropdown-item" href="lucidworks-fusion">Lucidworks Fusion</a>
+                                                    <a class="dropdown-item" href="algolia">Algolia</a>
+                                                    <a class="dropdown-item" href="sinequa">Sinequa</a>
+                                                    <a class="dropdown-item" href="coveo">Coveo</a>
+                                                    <a class="dropdown-item" href="microfocus-idol">Microfocus Idol</a>
+                                                </div>
+                                                <div class="col-sm-3 col-lg-3">
+                                                    <a class="dropdown-item" href="content-management">
+                                                        <h4>Content Management</h4>
+                                                    </a>
+                                                    <a class="dropdown-item"
+                                                        href="salesforce-community-cloud-consulting">Salesforce
+                                                        community cloud</a>
+                                                    <a class="dropdown-item" href="adobe-experience-manager">Adobe Experience Manager</a>
+                                                    <a class="dropdown-item" href="sitecore">Sitecore</a>
+                                                    <a class="dropdown-item" href="opentext">Opentext</a>
+                                                    <a class="dropdown-item" href="drupal">Drupal</a>
+                                                </div>
+                                                <div class="col-sm-2 col-lg-2">
+                                                    <a class="dropdown-item" href="data-engineering">
+                                                        <h4>Data Engineering</h4>
+                                                    </a>
+                                                    <a class="dropdown-item" href="database">Database</a>
+                                                    <a class="dropdown-item" href="kafka">Kafka</a>
+                                                    <a class="dropdown-item" href="spark">Spark</a>
+                                                    <a class="dropdown-item" href="cloud">Cloud</a>
+                                                    <a class="dropdown-item" href="data-science">Data Science/AI</a>
+                                                </div>
+                                                <div class="col-sm-2 col-lg-3">
+                                                    <a class="dropdown-item" href="software-product-development">
+                                                        <h4>Software Product Development</h4>
+                                                    </a>
+
+                                                </div>
+                                                <div class="col-sm-2 col-lg-2">
+                                                    <a class="dropdown-item" href="emerging-technologies">
+                                                        <h4>Emerging Technologies</h4>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item"><a class="nav-link" href="customers">Customers</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="partners">Partners</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="blog/">Blog</a></li>
+
+                                </ul>
+                            </div>
+                            <div class="col">
+                                <div class="d-flex align-items-center justify-content-end">
+                                    <a class="contactUs" href="contact-us">
+                                        Contact Us
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Section Start -->
+    <section class="heroSection hero section" id="homeSlider">
+        <div class="slider-wrapper">
+            <div class="slider inner-page">
+                <div class="slides-container">
+                    <div class="slide-wrapper">
+                        <div class="slide" data-order="1">
+                            <img src="./assets/img/sliderImg/slide1.jpg" alt="Apache Solr Monitoring with Nextbrick" />
+                            <div class="slide-content">
+                                <div class="container">
+                                    <div class="col-lg-7 pr-0">
+                                        <h1>Apache Solr Monitoring with Nextbrick</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+    <section class="es-solution service-content bg-white">
+        <div class="container">
+            <div class="card border-0 horizontal-card">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+					<img class="card-img" src="assets/img/blg12.webp" alt="Apache Solr Monitoring with Nextbrick">
+                        <div class="card-body">
+                            <small>July 29, 2020</small>
+                            <h5 class="card-title">Apache Solr Monitoring with Nextbrick</h5>
+							
+							<p class="card-text">
+							An open-source search server, Apache Solr is a Lucene full-text search engine and it has the latest features like indexing, exploring multiple websites, and delivering suggestions for relevant content according to the search query’s taxonomy. Furthermore, it can instantly search out documents and email attachments. The functional mechanism of this software is powered by Extensible Markup Language (XML) and Hypertext Transfer Protocol (HTTP). It is popularly used for enterprise research since it serves as a code layer and helps in creating Full-fledged search applications. It allows the users to obtain the preference and operate directly with the associated license library for searching and handling competencies of lower Lucene. The feature of <b>Apache Solr monitoring</b> is an important tool of this web-based administration console and it deals with the command-line interface and REST APIs.
+
+<br><br>
+<b>Features of Apache Solr Monitoring Tool</b>
+<br><br>
+- Real-time Indexing<br>
+- Categorizing and Parsing Documents<br>
+- Executing Designs for high-volume traffic<br>
+- Load-balanced querying and Configuring Logging<br>
+- Metrics Reporting and History Management<br>
+- Making Performance Statistics Reference<br>
+<br><br>
+<b>Different Types of Apache Solr Monitoring Caches</b>
+<br><br>
+Apache Solr Monitoring Caches are different from the regular caches and they are linked with an <b>Index Search</b> which is an unchanging “view” index in the software. During the uninterrupted operation of the Index Searcher, these particular cache items will remain valid and accessible for reuse. The cached types of Solr are-
+<br><br>
+<b>1.Field Cache:</b> This cache is required for sorting and in certain cases, for faceting. Instead of being operated by Solr, field cache itself is generated in every search initiation. These caches don’t have a specific option for configurations and they cannot be auto-warmed.
+<br><br>
+<b>2. Field Value Cache:</b> Almost similar to the low-level field cache, Field Value Cache has an offbeat feature that it carries multiple preferences per document. The reason is both multiple terms due to tokenization or multivalued fields). This cache is ideally meant for faceting. The key elements are field names, large data structures, and mapping doc Ids. Non-solrconfig.xml field Value Cache automatically formed with an introductory size 10 and extends to a max size of 10000. It doesn’t support auto warming.
+<br><br>
+<b>3.Query Result Cache:</b> This cache reserves ordered collections of document IDs as well as the top N series of models. Its stored document IDs are delivered to the user query and the memory of the storage is moderate in comparison to Filter Cache memory capacity.
+<br><br>
+<b>4.Document Cache:</b> Solr support is practically amputated by Document Cache and these are the fetched objects from the storage disk. Each elemental item in the document Cache has a Record of Field references and the information is produced during the operative framework of LazyFieldLoading=true. This is why objects collected from the Index Reader are marked as “LOAD_LAZY”. After lazy loading, the document cache updates the evidence to the recently achieved fields and these new files are not LOAD_LAZY items. Different “fl” params emanate from the Document Object for re-using the cache.
+<br><br>
+<b>5.Update Handler:</b> During stipulating a custom algorithm, UpdateHandler API enables the user to determine added and deleted sequences that have been processed by Solr. Solrconfig.xml is utilised for configuring the UpdateHandler and implementing a novel UpdateHandler is regarded as remarkably advanced.
+<br><br>
+<b>6.Query Handler:</b> The conventional strategy in <b>Apache Solr monitoring</b> is to ascertain one query for the original import and a second query to retrieve the changed document IDs. It also defines a third query to bring the updated data. Particularly if the user expects a comprehensive amount of variances, this is not particularly useful. In general, all the query processing operation is managed by a Query Handler.
+<br><br>
+Installing the Apache Solr Monitoring comes with assorted advantages like JAVA-powered speed, enhanced organizational operations, expeditious delivery of query, vicinity of spell-checking operators, and multilingual search offerings. The use of Apache Solr shows Holistic results as well as covers relevancy-sorting of dynamic summaries. This software is compatible with any JAVA platform and its indexes are transferable across diverse platforms. As far as the complex weighing is concerned, Solr search can effectively score results according to the number of parameters during the indexing progress. Avail the Nextbrick’s technical compensations for <b>Apache Solr support</b> to make your industry digitally sufficient.
+
+
+							
+							</p>
+							
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+
+	<section class="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-lg-3">
+                    <h3> Related articles </h3>
+                </div>
+                <div class="col-md-9 col-lg-9">
+                    <div class="owl-carousel owl-theme blog-carousel">
+                        <div class="carditem">
+                            <div class="card">
+                                <img class="card-img-top" src="assets/img/blg1.webp" alt="What are Apache Solr and its advantages">
+                                <div class="card-body">
+                                    <small><em>September 27, 2021</em></small>
+                                    <h5 class="card-title">What are Apache Solr and its advantages?</h5><br><br>
+                                    <a href="blog/what-are-apache-solr-and-its-advantages" class="btn btn-primary" target="_self">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carditem">
+                            <div class="card">
+                                <img class="card-img-top" src="assets/img/blg2.webp" alt="Elastic Search Important Features a Business Should Know About">
+                                <div class="card-body">
+                                    <small><em>August 28, 2021</em></small>
+                                    <h5 class="card-title">Elastic Search Important Features a Business Should Know About</h5>
+                                    <a href="blog/elastic-search-important-features-a-business-should-know-about" class="btn btn-primary" target="_self">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carditem">
+                            <div class="card">
+                                <img class="card-img-top" src="assets/img/blg3.webp" alt="Solr Performance: The way you can use logs">
+                                <div class="card-body">
+                                    <small><em>July 11, 2021</em></small>
+                                    <h5 class="card-title">Solr Performance: The way you can use logs and…</h5><br>
+                                    <a href="blog/solr-performance" class="btn btn-primary" target="_self">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carditem">
+                            <div class="card">
+                                <img class="card-img-top" src="assets/img/blg4.webp" alt="Salesforce communities- Everything you need to know">
+                                <div class="card-body">
+                                    <small><em>June 20, 2021</em></small>
+                                    <h5 class="card-title">Salesforce communities- Everything you need to know</h5>
+                                    <a href="blog/salesforce-communities" class="btn btn-primary" target="_self">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carditem">
+                            <div class="card">
+                                <img class="card-img-top" src="assets/img/blg5.webp" alt="Elasticsearch Monitoring Tools a handy guide of Open Source">
+                                <div class="card-body">
+                                    <small><em>May 10, 2021</em></small>
+                                    <h5 class="card-title">Elasticsearch Monitoring Tools a handy guide of Open Source…</h5>
+                                    <a href="blog/elasticsearch-monitoring-tools" class="btn btn-primary" target="_self">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+	
+    
+	<!-- Footer start -->
+    <footer>
+        <div class="container">
+            <div class="row" data-aos="fade-up" data-aos-duration="700">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4 pr-5">
+                            <h3 class="contactTitle">
+                                Contact Us
+                            </h3>
+                            <div class="contactDetail">
+                                51 E campbell Ave. #400A,<br>
+                                Campbell, CA, 95008<br><br>
+								<img src="assets/img/phone.png" alt="Phone" width="24" />&nbsp;&nbsp; +14084090256 <br>
+								<img src="assets/img/email.png" alt="Email"  width="24" />&nbsp;&nbsp; info@nextbrickinc.com
+                            </div>
+                            <a class="contactBtn" href="contact-us">Contact Us</a>
+                           <!-- <h3>Follow us</h3>
+                            <ul class="socialLinks">
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/img/insta.png" alt="Insta" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/img/linkedIn.png" alt="linkedin" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="assets/img/fb.png" alt="fb" />
+                                    </a>
+                                </li>
+                            </ul> -->
+                        </div>
+                        <div class="col-md-2">
+                            <ul class="list">
+                                <li>
+                                    <a href="./">Home</a>
+                                </li>
+                                <li>
+                                    <a href="about">About</a>
+                                </li>
+                                <li>
+                                    <a href="customers">Customers</a>
+                                </li>
+                                <li>
+                                    <a href="partners">Partners</a>
+                                </li>
+                                <li>
+                                    <a href="blog/">Blog</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h3>Services</h3>
+                            <ul class="list">
+                                <li>
+                                    <a href="content-management">Content Management</a>
+                                </li>
+                                <li>
+                                    <a href="search">Search</a>
+                                </li>
+                                <li>
+                                    <a href="bigdata">Bigdata</a>
+                                </li>
+                                <li>
+                                    <a href="cloud">Cloud</a>
+                                </li>
+                                <li>
+                                    <a href="offshore-development">Offshore Development</a>
+                                </li>
+                                <li>
+                                    <a href="emerging-technologies">Emerging Technologies</a>
+                                </li>
+                                <li>
+                                    <a href="application-development">Application Development</a>
+                                </li>
+                                <li>
+                                    <a href="software-product-development">Software Product Development</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-0">
+                        </div>
+                        <div class="col-md-3 terms mr-0 pr-0">
+                            <ul class="list">
+                                <li>
+                                    <a href="terms">Terms of Use</a> <span style="color:#fff;">|</span> <a href="privacy-policy">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    &nbsp;
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+<!-- Footer End -->
+
+    <script type="text/javascript" src="./assets/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
+    <script type="text/javascript" src="./assets/js/slider.js"></script>
+    <script type="text/javascript" src="./assets/js/app.js"></script>
+    <script type="text/javascript" src="./assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="./assets/js/aos.js"></script>
+    <script type="text/javascript" src="./assets/js/contact.js"></script>
+
+</body>
+
+</html>

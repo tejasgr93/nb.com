@@ -1,0 +1,23 @@
+.megamenu-dropdown,
+.navList {
+    position: static;
+}
+.dropdown-item {
+    font-size: 14px;
+    font-family: fontFamily(latoLight);
+    h4 {
+        font-size: 14px;
+        color: #fff;
+    }
+}
+.megamenu-dropdown {
+    .dropdown-menu {
+        .dropdown-item {
+            opacity: 0.8;
+        }
+
+        .dropdown-item:first-child {
+            opacity: 1;
+        }
+    }
+}

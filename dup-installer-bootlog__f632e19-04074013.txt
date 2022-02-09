@@ -1,0 +1,23 @@
+Aug 12 17:36:18 ==DUPLICATOR INSTALLER BOOTSTRAP v1.3.14==
+Aug 12 17:36:18 ----------------------------------------------------
+Aug 12 17:36:18 Installer bootstrap start
+Aug 12 17:36:18 Using archive /var/www/html/20190704_f632e19b0ff4ccfa7054_20190704074013_archive.zip
+Aug 12 17:36:18 Manual extract found so not going to extract dup-installer dir
+Aug 12 17:36:18 Didn't need to extract the installer.
+Aug 12 17:36:18 Couldn't set permissions of /var/www/html/dup-installer to 755<br/>
+Aug 12 17:36:18 Couldn't set permissions of /var/www/html/dup-installer/assets to 755<br/>
+Aug 12 17:36:18 Couldn't set permissions of /var/www/html/dup-installer/classes to 755<br/>
+Aug 12 17:36:18 Couldn't set permissions of /var/www/html/dup-installer/ctrls to 755<br/>
+Aug 12 17:36:18 Couldn't set permissions of /var/www/html/dup-installer/favicon to 755<br/>
+Aug 12 17:36:18 Couldn't set permissions of /var/www/html/dup-installer/lib to 755<br/>
+Aug 12 17:36:18 Couldn't set permissions of /var/www/html/dup-installer/views to 755<br/>
+Aug 12 17:36:18 Couldn't set permissions of /var/www/html/dup-installer/dup-archive__f632e19-04074013.txt to 2676<br/>
+Aug 12 17:36:18 Couldn't set permissions of /var/www/html/dup-installer/dup-database__f632e19-04074013.sql to 2676<br/>
+Aug 12 17:36:18 Set permissions of /var/www/html/dup-installer/dup-installer-csrf__f632e19-04074013.txt to 2676<br/>
+Aug 12 17:36:18 Set permissions of /var/www/html/dup-installer/dup-installer-log__f632e19-04074013.txt to 2676<br/>
+Aug 12 17:36:18 Set permissions of /var/www/html/dup-installer/dup-installer-notices__f632e19-04074013.json to 2676<br/>
+Aug 12 17:36:18 Couldn't set permissions of /var/www/html/dup-installer/dup-scan__f632e19-04074013.json to 2676<br/>
+Aug 12 17:36:18 Couldn't set permissions of /var/www/html/dup-installer/index.php to 2676<br/>
+Aug 12 17:36:18 Set permissions of /var/www/html/dup-installer/installer-state.txt to 2676<br/>
+Aug 12 17:36:18 Couldn't set permissions of /var/www/html/dup-installer/main.installer.php to 2676<br/>
+Aug 12 17:36:18 No detected errors so redirecting to the main installer. Main Installer URI = https://www.nextbrick.com/dup-installer/main.installer.php
